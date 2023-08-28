@@ -1,17 +1,28 @@
 import requests
 
-def getDetails(ip):
-    if ip == None:
-        response = requests.get('https://ipinfo.io/json', verify=True)
-    else:
-        response = requests.get(f'https://ipinfo.io/{ip}/json', verify=True)
-
-    if response.status_code != 200:
-        return 'Status:', response.status_code, 'Problem with the request. Exiting.'
+class Locator():
     
-    data = response.json()
-    return data
+    def __init__(self):
+        self.domain = 'https://ipinfo.io/'
+        self.verify = True
+    
+    def createErrorMessage(status_code):
+        return 'Status:', status_code, 'Problem with the request. Exiting.'
+
+    def getDetails(self, ip):
+        if ip == None:
+            response = requests.get(self.domain + '/json', verify=self.verify)
+        else:
+            response = requests.get(self.domain + ip + '/json', verify=self.verify)
+
+        if response.status_code != 200:
+            errorMessage = self.createErrorMessage(response.status_code)
+            return errorMessage
+        
+        data = response.json()
+        return data
 
 if __name__ == '__main__':
-    details = getDetails()
+    locator = Locator()
+    details = locator.getDetails('1.1.1.1')
     print(details)
