@@ -29,7 +29,11 @@
 
     <div class="container">
         <h1 class="mt-3">IP Address and Location</h1>
-        <table class="table table-bordered mt-3 w-50">
+        {% if request.MOBILE %}
+            <table class="table table-bordered mt-3 w-100">
+        {% else %}
+            <table class="table table-bordered mt-3 w-50">
+        {% endif %}
             <tbody>
                 <tr>
                     <td>IP Address</td>
@@ -48,11 +52,20 @@
                 </tr>
             </tbody>
         </table>
-        <div class="mt-3" id="map"></div>
-        <br>
 
+        {% if request.MOBILE %}
+            <div class="mt-3 w-100" id="map"></div>
+        {% else %}
+            <div class="mt-3 w-50" id="map"></div>
+        {% endif %}
+        
+        <br>
         <h4>Try another IP address</h4>
-        <form class="d-flex mt-3 w-50" action="/">
+        {% if request.MOBILE %}
+            <form class="d-flex mt-3 w-100" action="/">
+        {% else %}
+            <form class="d-flex mt-3 w-100" action="/">
+        {% endif %}
             <input class="form-control me-2" placeholder="{{ip}}" name="ip">
             <input class="btn btn-outline-primary" type="submit" value="Submit">
         </form>

@@ -1,8 +1,11 @@
 from flask import Flask, render_template, request
+from flask_mobility import Mobility
 from locator.locator import getDetails
 
 app = Flask(__name__)
 port = 4500
+
+Mobility(app)
 
 @app.route('/')
 def home():

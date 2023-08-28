@@ -1,2 +1,5 @@
 # Python cache files
 /locator/__pycache__/
+
+# Test files
+*test*

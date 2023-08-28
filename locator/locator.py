@@ -8,7 +8,6 @@ def getDetails(ip):
 
     if response.status_code != 200:
         return 'Status:', response.status_code, 'Problem with the request. Exiting.'
-        exit()
     
     data = response.json()
     return data
