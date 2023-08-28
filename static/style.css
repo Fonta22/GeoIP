@@ -1,8 +1,14 @@
 .flag { width: 1.5em; }
 
 #map {
-    /*width: 50%;*/
     height: 20rem;
 }
 
 .hidden { display: none; }
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
