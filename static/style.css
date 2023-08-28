@@ -1,0 +1,8 @@
+.flag { width: 1.5em; }
+
+#map {
+    width: 50%;
+    height: 20rem;
+}
+
+.hidden { display: none; }
