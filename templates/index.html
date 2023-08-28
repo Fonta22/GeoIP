@@ -64,7 +64,7 @@
         {% if request.MOBILE %}
             <form class="d-flex mt-3 w-100" action="/">
         {% else %}
-            <form class="d-flex mt-3 w-100" action="/">
+            <form class="d-flex mt-3 w-50" action="/">
         {% endif %}
             <input class="form-control me-2" placeholder="{{ip}}" name="ip">
             <input class="btn btn-outline-primary" type="submit" value="Submit">
@@ -88,7 +88,7 @@
 
     <script>
         const bodySize = document.querySelector('body').offsetHeight;
-        
+
         // Constantly check the window size to situate the footer right.
         setInterval(() => {
             if (bodySize < window.innerHeight) {
