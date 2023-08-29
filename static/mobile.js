@@ -1,7 +1,7 @@
 // Adapt margins properly when the application is run in a mobile browser
 
 /**
- * Regular expression. Returns true if the application is running in a mobile device
+ * Regular expression. Returns true if the application is running in a mobile device.
  */
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
