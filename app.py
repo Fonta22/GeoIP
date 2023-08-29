@@ -11,8 +11,8 @@ Mobility(app)
 def home():
     ip = request.args.get('ip')
 
-    locator = Locator()
-    details = locator.getDetails(ip)
+    locator = Locator(ip)
+    details = locator.getDetails()
 
     try:
         return render_template(
