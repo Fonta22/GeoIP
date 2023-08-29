@@ -6,7 +6,7 @@ class Locator():
         self.domain = 'https://ipinfo.io/'
         self.verify = True
     
-    def createErrorMessage(status_code):
+    def createErrorMessage(self, status_code):
         return 'Status:', status_code, 'Problem with the request. Exiting.'
 
     def getDetails(self, ip):
@@ -17,7 +17,11 @@ class Locator():
 
         if response.status_code != 200:
             errorMessage = self.createErrorMessage(response.status_code)
-            return errorMessage
+
+            return {
+                'message': errorMessage,
+                'status_code': response.status_code
+            }
         
         data = response.json()
         return data

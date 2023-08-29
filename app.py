@@ -14,13 +14,21 @@ def home():
     locator = Locator()
     details = locator.getDetails(ip)
 
-    return render_template(
-        'index.html',
-        ip=details['ip'],
-        country=details['country'],
-        region=details['region'],
-        loc=details['loc']
-    )
+    try:
+        return render_template(
+            'index.html',
+            ip=details['ip'],
+            country=details['country'],
+            region=details['region'],
+            loc=details['loc']
+        )
+    except:
+        print(details['message'])
+        return render_template(
+            'error.html',
+            status_code=details['status_code'],
+            invalid_ip=ip
+        )
 
 if __name__ == '__main__':
     app.run(debug=True, port=port)
