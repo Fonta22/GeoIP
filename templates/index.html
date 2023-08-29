@@ -4,7 +4,13 @@
     <title>GeoIP</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS stylesheet -->
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+
+    <!-- Responsive favicon -->
+    <link rel="icon" type="image/svg+xml" href="{{url_for('static', filename='favicon-dark-mode.svg')}}" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/svg+xml" href="{{url_for('static', filename='favicon-light-mode.svg')}}" media="(prefers-color-scheme: light)">
     
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
